@@ -1,6 +1,5 @@
 const express = require('express');
 
-const router = require('../router');
 const Logger = require('../utils/logger.js');
 const config = require('../config/appconfig');
 
@@ -11,11 +10,12 @@ app.set('config', config);
 
 app.use(express.json());
 
+app.set('db', require('../models/index.js'));
+
 /**
  * Register API routes.
  */
-app.use(router);
-
+app.use(require('../router'));
 
 app.use((req, res, next) => {
 	logger.log('the url you are trying to reach is not hosted on our server', 'error');
