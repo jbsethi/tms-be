@@ -1,3 +1,6 @@
+const cookieParser = require('cookie-parser');
+const cors = require('cors');
+
 const express = require('express');
 
 const Logger = require('../utils/logger.js');
@@ -8,7 +11,11 @@ const app = express();
 
 app.set('config', config);
 
+app.use(cors());
+
 app.use(express.json());
+
+app.use(cookieParser());
 
 app.set('db', require('../models/index.js'));
 

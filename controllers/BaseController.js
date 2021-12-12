@@ -37,6 +37,7 @@ class BaseController {
 		try {
 			result = await req.app.get('db')[modelName].findOne(options);
 		} catch (err) {
+			console.log(err)
 			return Promise.reject(err);
 		}
 		return result;

@@ -1,3 +1,4 @@
+'use strict';
 module.exports = (sequelize, DataTypes) => {
 	const Users = sequelize.define('Users', {
 		id: {
@@ -32,19 +33,23 @@ module.exports = (sequelize, DataTypes) => {
 		last_login_date: {
 			type: DataTypes.DATE,
 		},
-		createdAt:
+		created_at:
 		{
-			type: DataTypes.DATE, field: 'created_at',
+			type: DataTypes.DATE,
 		},
-		updatedAt: {
-			type: DataTypes.DATE, field: 'updated_at',
+		updated_at: {
+			type: DataTypes.DATE,
 		},
+	}, 
+	{
+		underscored: true,
+	})
 
-	}, {});
-	Users.associate = function (models) {
-		Users.hasMany(models.Roles, {
-			foreignKey: 'role_id',
+	Users.associate = (models) => {
+    Users.belongsTo(models.Roles, {
+			foreignKey: 'role_id'
 		});
-	};
-	return Users;
+  };
+
+  return Users;
 };

@@ -11,7 +11,7 @@ class RequestHandler {
 
 	validateJoi(err, status, errorType, errorMessage) {
 		if (err) { this.logger.log(`error in validating request : ${errorMessage}`, 'warn'); }
-		return !_.isNull(err) ? this.throwError(status, errorType, errorMessage)() : '';
+		return !_.isUndefined(err) ? this.throwError(status, errorType, errorMessage)() : '';
 	}
 
 	throwError(status, errorType, errorMessage) {

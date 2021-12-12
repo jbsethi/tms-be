@@ -1,29 +1,28 @@
 {
   "development": {
-    "url" : "127.0.0.1",
     "username": "root",
     "password": "sup3rman65",
     "database": "lms-db",
     "host": "127.0.0.1",
-    "port": 5432,
+    "port": 3306,
     "dialect": "mysql"
   },
   "test": {
     "url" : "postgres://postgres:password@localhost:5432/iLrn",
     "username": "postgres",
     "password": "password",
-    "database": "iLrn",
+    "database": "lms-db",
     "host": "127.0.0.1",
-    "port": 5432,
+    "port": 3306,
     "dialect": "mysql"
   },
   "production": {
     "url" : "postgres://postgres:password@localhost:5432/iLrn",
     "username": "postgres",
     "password": "password",
-    "database": "iLrn",
+    "database": "lms-db",
     "host": "127.0.0.1",
-    "port": 5432,
+    "port": 3306,
     "dialect": "mysql"
   }
 }
